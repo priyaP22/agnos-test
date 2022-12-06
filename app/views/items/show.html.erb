@@ -1,0 +1,18 @@
+<h1><%= @item.name %></h1>
+
+<h2><%= "price:" %></h2>
+
+<p><%= @item.price %></p>
+
+<h2><%= "Tax Rate:" %></h2>
+
+<p><%= @item.tax_rate %></p>
+
+
+<ul>
+  <li><%= link_to "Edit", edit_item_path(@item) %></li>
+  <li><%= link_to "Destroy", item_path(@item), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %></li>
+</ul>

@@ -1,0 +1,13 @@
+<%= form_with model: [order, order.order_items.build] do |form| %>
+  <div>
+    <%= form.label :item %><br>
+    <%= form.select(:item_id, Item.all.collect { |s| [s.name, s.id] }, {:include_blank => true}) %>
+  </div>
+  <div>
+    <%= form.label :quantity %><br>
+    <%= form.text_area :quantity %><br>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

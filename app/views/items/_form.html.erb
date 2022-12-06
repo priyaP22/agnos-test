@@ -1,0 +1,29 @@
+<%= form_with model: item do |form| %>
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+    <% item.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :price %><br>
+    <%= form.text_area :price %><br>
+    <% item.errors.full_messages_for(:price).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :tax_rate %><br>
+    <%= form.text_area :tax_rate %><br>
+    <% item.errors.full_messages_for(:tax_rate).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

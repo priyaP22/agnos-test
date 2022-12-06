@@ -1,0 +1,21 @@
+<h1><%= @order.id %></h1>
+
+<h2><%= "items:" %></h2>
+
+<%= render "order_items", order: @order %>
+
+<h2><%= "Total amount:" %></h2>
+
+<%= @order.total_amount %>
+
+<h2>Add a item:</h2>
+
+<%= render "form", order: @order %>
+
+<ul>
+  <li><%= link_to "Edit", edit_order_path(@order) %></li>
+  <li><%= link_to "Destroy", order_path(@order), data: {
+    turbo_method: :delete,
+    turbo_confirm: "Are you sure?"
+  } %></li>
+</ul>
